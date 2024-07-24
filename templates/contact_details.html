@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="{{ url_for('static', filename='javascript/contact_details.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact_details.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        #form1 {
+            display: flex;
+            flex-direction: column;
+        }
+        .radio-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .radio-group input[type="radio"] {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+{% block body %}
+<i class="fa-solid fa-user" style="color: #ffffff;font-size:5vw;"></i>
+<div id="main">
+    <div id="sub">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form id="contactDetails" method="POST">
+            <input type="text" name="full_name" class="edit" value="{{ contact[0] }}" readonly required><br>
+            <input type="email" name="email" class="edit" value="{{ contact[1] }}" readonly ><br>
+            <input type="text" name="phone_number" class="edit" value="{{ contact[2] }}" readonly required><br>
+
+            <div id="form1">
+                <div class="radio-group" style="margin-right: auto;margin-left:auto;width:30%;">
+                    <input type="radio" id="m" value="enableEdit" name="editMode">
+                    <label for="m">Enable Edit</label>
+                </div>
+                <div class="radio-group" style="margin-right: auto;margin-left:auto;width:30%;">
+                    <input type="radio" id="b" value="disableEdit" name="editMode">
+                    <label for="b">Disable Edit</label>
+                </div>
+            </div>
+            <button type="submit" id="saveBtn">Save</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

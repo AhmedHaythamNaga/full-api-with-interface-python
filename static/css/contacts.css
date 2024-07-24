@@ -1,0 +1,57 @@
+body {
+     background:linear-gradient(#9d64d5,mediumorchid,mediumpurple);
+     font-family: sans-serif;
+}
+#main {
+    width:100vw;
+    height:100vh;
+    background:transparent;
+    font-family:sans-serif;
+    display:inline-flex;
+}
+#addContactbtn{
+    background:lightskyblue;
+    border:1px solid black;
+    border-radius:10px 10px 10px 10px;
+    width:10vw;
+    height:fit-content;
+    margin-left:2%;
+    margin-right:auto;
+    font-size:10%;
+
+}
+#main{
+    display:inline-flex;
+    margin-left:5%;
+    margin-right:auto;
+    border-spacing:2vw;
+}
+#contacts{
+    width:80vw;
+    height:fit-content;
+    background:white;
+    color:black;
+    border-radius:10px 10px 10px 10px;
+
+}
+.rightmost {
+    float:right;
+}
+#title{
+    font-size: 2vw;
+    text-align:center;
+    margin-left:40%;
+    margin-right: auto;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-danger {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #ebccd1;
+}
